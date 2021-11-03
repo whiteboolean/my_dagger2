@@ -4,11 +4,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class HttpModule {
+public class HttpModule1 {
 
     @Provides
-    public HttpObject provideHttpObject(){
-        return new HttpObject();
+    public HttpObject1 provideHttpObject(){
+        return new HttpObject1();
     }
 
 }

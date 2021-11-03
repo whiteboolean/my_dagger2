@@ -1,14 +1,18 @@
-package com.baidu.myapplication.use1;
+package com.baidu.myapplication.use2;
 
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
+@Singleton
 @Module
 public class DataBaseModule {
 
+    @Singleton
     @Provides
-    public DataBaseObject provideDataBaseObject() {
+    public DataBaseObject provideDatBaseObject(){
         return new DataBaseObject();
     }
+
 }
