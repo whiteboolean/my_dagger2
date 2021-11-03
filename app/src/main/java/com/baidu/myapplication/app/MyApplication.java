@@ -1,7 +1,8 @@
-package com.baidu.myapplication;
+package com.baidu.myapplication.app;
 
 import android.app.Application;
 
+import com.baidu.myapplication.di.DaggerPresenterComponent;
 import com.baidu.myapplication.use2.DaggerMyComponent;
 import com.baidu.myapplication.use2.DataBaseModule;
 import com.baidu.myapplication.use2.HttpModule;
@@ -17,6 +18,7 @@ public class MyApplication extends Application {
         myComponent = DaggerMyComponent.builder()
                 .httpModule(new HttpModule())
                 .dataBaseModule(new DataBaseModule())
+                .presenterComponent(DaggerPresenterComponent.create())
                 .build();
 
     }

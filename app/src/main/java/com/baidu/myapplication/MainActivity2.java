@@ -2,6 +2,8 @@ package com.baidu.myapplication;
 
 import android.os.Bundle;
 
+import com.baidu.myapplication.app.MyApplication;
+import com.baidu.myapplication.di.Presenter;
 import com.baidu.myapplication.use2.HttpObject;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,6 +21,13 @@ public class MainActivity2 extends AppCompatActivity {
     @Inject
     HttpObject httpObject;
 
+
+    @Inject
+    Presenter presenter;
+
+    @Inject
+    Presenter presenter1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +39,8 @@ public class MainActivity2 extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
 
         Log.e(TAG,httpObject.hashCode()+"");
+        Log.e(TAG,"presenter:"+presenter.hashCode()+"");
+        Log.e(TAG,"presenter1:"+presenter1.hashCode()+"");
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
